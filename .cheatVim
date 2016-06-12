@@ -1,0 +1,33 @@
+Folding
+- zf{move commands} = crate a fold
+- zo = open fold
+- zO = open all folds
+- zc = close fold
+- zC = close all folds
+--
+Copy & Pasting
+- P = paste from outside vim
+- y = copie from inside & outside vim
+- f12 = paste mode where tab pasting works correctly
+--
+Undo
+- u = undo
+- Ctrl-r = redo
+- ,-u = Advanced undo truee
+--
+File Manager
+- Ctrl-e = file browser
+- Ctrl-p = Quick fuzzy search for files
+- I = show invisable files in nerd tree
+--
+Surround
+- S = surround highlighted text with any thing
+--
+Snippets
+- Ctrl-k = Completes the snippet
+Auto Complete
+- spf13 Git README "YouCompleteMe"
+Git
+- spf13 Git README "Fugitive"
+
+

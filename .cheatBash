@@ -1,0 +1,150 @@
+*CheatSheet
+** vars and strings
+*** numbers
+num1=5
+num2=6
+echo "$((num1+num2))"
+*** text
+myVar="Hello"
+myVar2=" World"
+echo $myVar $myVar2 " Other Stuff"
+*** Many lines
+cat<< END
+This will
+print all
+the lines
+END
+*** Replace
+#parameter expansion
+test="The dog climbed the tree"
+echo "${test//dog/cat}"
+*** Default Value
+#parameter expansion
+name=""
+echo "I am ${name:=YourName}"
+*** String split
+rand_str="A random string"
+echo "String Length : ${#rand_str}"
+echo "${rand_str:2}"
+echo "${rand_str:2:7}"
+echo "${rand_str#*A }"
+*** Command Line Arguments
+echo "$1 $2"
+** Strings
+** Functions
+*** Simple
+getDate(){
+  date
+  return
+}
+getDate
+*** Local Vars
+name="Test"
+demLocal(){
+  local name="Test2"
+  echo "$name"
+  return
+}
+demLocal
+echo "$name"
+*** pass params
+getSum(){
+    echo $(($1+$2))
+}
+echo $(getSum 5 6)
+
+** User Input
+*** Single
+read -p "What is your name? " name
+echo "Hello $name"
+*** Multi
+read -p "Enter 2 Numbers To Sum : " num1 num2
+sum=$((num1+num2))
+echo "$num1 + $num2 = $sum"
+** If
+if [ 0 -eq 4 ]
+then
+    echo "match"
+else
+    echo "not a match"
+fi
+
+** If Else
+age=15
+if [ $age -gt 15 ]
+then
+    echo "You can drive"
+elif [ $age -eq 15  ]
+then
+    echo "You can drive next year"
+else
+    echo "You can't drive"
+fi
+
+** For loop
+*** Simple For loop
+for (( i=0; i <= 10; i=i+1 )); do
+    echo $i
+done
+*** For loop through array
+**** Existing
+for i in ${fav_nums[*]}; do
+    echo $i
+done
+**** New
+for i in {A..Z}; do
+    echo $i
+done
+** While loop
+num=1
+while [ $num -le 10 ]; do
+    echo $num
+    num=$((num + 1))
+done
+*** Brake while
+num=1
+while [ $num -le 10 ]; do
+    echo $num
+    num=$((num + 1))
+done
+
+** Arrays
+*** Using arrays
+fav_nums=(4 8 2 2.58)
+echo ${fav_nums[0]}
+fav_nums[4]=55555
+echo ${fav_nums[4]}
+fav_nums+=(9 9)
+echo ${fav_nums[5]}
+echo "**********"
+for i in ${fav_nums[*]}; do
+    echo $i
+done
+*** Print out full array
+echo ${myArray[@]}
+*** Sort Array
+sorted_nums=($(for i in "${fav_nums[@]}"; do
+echo $i;
+done | sort))
+** IO
+*** File Exists
+file1="./test_file1"
+if [ -e "$file1" ]; then
+    echo "$file1 exists"
+fi
+
+*** Read File
+**** Word by word
+while read parm1 parm2 parm3; do
+    printf "${parm1} ${parm2} ${parm3}\n"
+done < test.txt
+
+** Reg Ex
+read -p "Validate Date: " date
+pat="^[0-9]{8}$"
+if [[ $date =~ $pat ]]; then
+    echo "match"
+else
+    echo "not match"
+fi
+

@@ -1,4 +1,9 @@
 set relativenumber
-:command Cb edit .cheatBash
-:command Ct edit .cheatTypeScript
-:command Cv edit .cheatVim
+:command Cb edit ~/.cheatBash
+:command Cts edit ~/.cheatTypeScript
+:command Cv edit ~/.cheatVim
+:command Ct edit ~/.cheatTmux
+let g:airline_theme='powerlineish'
+
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''

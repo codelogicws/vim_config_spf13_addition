@@ -32,7 +32,11 @@ echo "${rand_str#*A }"
 echo "$1 $2"
 ** Strings
 ** Functions
-*** Simple
+*** Simple No Return
+function myFunction {
+ echo "test"
+}
+*** Simple With Return
 getDate(){
   date
   return

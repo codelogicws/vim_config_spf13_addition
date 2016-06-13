@@ -1,0 +1,25 @@
+Basic
+- Ctrl-b ? = list of all commands
+- Ctrl-c = create new window
+- Ctrl-x = remove panel
+- Ctrl-b [0-9] = switch to session that that matches input number
+Panel Make
+- Ctrl-% = make a new vertical split panel
+- Ctrl-" = make a new horizontal split panel
+Panel Navigation
+- Ctrl-o = focus other panel
+- Ctrl-; = focus previus panel
+Panel Sizeing and Position
+- Ctrl-b Ctrl-o = move panels
+- Ctrl-space = rearrange panels
+- Ctrl-z = Maximize Panel
+Window Navigation
+- Ctrl-f = find window by name
+Command Line
+- Ctrl-B : = Takes you to command line
+- kill-session = kills the entire session
+Window Custom Sizing
+- To find all the commands "Ctrl-b ?" will be your friend
+- Ctrl-B : = get to command line then "tmux resize-p -L 50" to change the panel size
+- use tmux list-windows to get the code for resizing windows
+- use that code in the tmuxinator to save the config

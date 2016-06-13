@@ -29,5 +29,10 @@ Auto Complete
 - spf13 Git README "YouCompleteMe"
 Git
 - spf13 Git README "Fugitive"
-
-
+Navigation
+- ,,w = fast way to go to any word
+- ,,j = fast way to move to any line above
+- ,,k = fast way to move to any line below
+Install Plugins
+- In bash use command     echo Bundle \'spf13/vim-colors\' >> ~/.vimrc.bundles.local
+- Then in bash            vim +BundleInstall! +BundleClean +q
